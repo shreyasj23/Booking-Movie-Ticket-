@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  h1{
+    color: black;
+  }
+  h2 {
+    color: black;
+  }
+  
+  
+  .movie-seating {
+    text-align: center;
+    color: black;
+    background-color: rgb(215, 247, 247) ;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  label {
+    font-size: 18px;
+    font-style: italic;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  
+  input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    margin: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 5px solid black;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .seats-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+  }
+  
+  .seat {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background-color: lightgray;
+    border: 2px solid black;
+    outline: 2px solid yellow;
+    position: relative;
+  }
+  
+  .seat.selected {
+    background-color: lightgreen;
+  }
+  
+  .seat.reserved {
+    background-color: red;
+    cursor: not-allowed;
+  }
+  
+  .seat:hover:not(.reserved) {
+    background-color: grey;
+    transform: scale(1.1);
+  }
+  
+  .summary {
+    margin-top: 20px;
+  }
+  .submit, .fetched{
+    margin: 5px;
+    background-color: lightgray;
+    border: 2px solid black;
+    outline: 2px solid gainsboro;
+    position: relative;
+
+  }
+  @keyframes submitAnimation {
+    0% {
+      transform: scale(1);
+      background-color: lightblue;
+    }
+    50% {
+      transform: scale(1.1);
+      background-color: lightcoral;
+    }
+    100% {
+      transform: scale(1);
+      background-color: lightblue;
+    }
+  }
+  
+  button:hover {
+    background-color: lightblue;
+    transform: scale(1.1);
+  }
+  
+  button:active {
+    animation: submitAnimation 0.6s ease;
+  }
+  
+  /* for Mobile Devices */
+  @media (max-width: 600px) {
+    .seat {
+      width: 60px;
+      height: 60px;
+    }
+  
+    button {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  
+    input[type="number"] {
+      width: 50px;
+    }
+  }
+  
+  /* For Desktop Devices */
+  @media (min-width: 601px) {
+    .seat {
+      width: 100px;
+      height: 100px;
+    }
+  
+    button {
+      font-size: 18px;
+      padding: 12px 24px;
+    }
+  
+    input[type="number"] {
+      width: 70px;
+    }
+  }
+  
